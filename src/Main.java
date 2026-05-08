@@ -14,28 +14,25 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         // 1. Create the UI Components
+
         Text text1 = new Text("Genres: ");
         Text text2 = new Text("Name:");
         Text text3 = new Text("Registered: ");
 
         TextField textField1 = new TextField();
 
-        // for Genre
         ComboBox<String> comboBox1 = new ComboBox<>();
-        // for Registered
         ComboBox<String> comboBox2 = new ComboBox<>();
 
         Button button1 = new Button("Save");
         Button button2 = new Button("Remove");
 
-        // Set widths so they look neat
         comboBox1.setPrefWidth(200);
         textField1.setPrefWidth(200);
         button1.setPrefWidth(200);
         comboBox2.setPrefWidth(200);
         button2.setPrefWidth(200);
 
-        // 2. Setup the GridPane
         GridPane gridPane = new GridPane();
         gridPane.setMinSize(600, 400);
         gridPane.setPadding(new Insets(10));
@@ -43,7 +40,6 @@ public class Main extends Application {
         gridPane.setHgap(10);
         gridPane.setAlignment(Pos.CENTER);
 
-        // 3. Add components to the Grid
         gridPane.add(text1, 0, 0);
         gridPane.add(comboBox1, 1, 0);
 
@@ -57,11 +53,18 @@ public class Main extends Application {
 
         gridPane.add(button2, 1, 4);
 
-        // 4. Attach to Scene and Show
         Scene scene = new Scene(gridPane);
         primaryStage.setTitle("Movies");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
+        String btnStyle = "-fx-background-color: darkslateblue; -fx-text-fill: white; -fx-font-weight: bold;";
+        button1.setStyle(btnStyle);
+        button2.setStyle(btnStyle);
+        gridPane.setStyle("-fx-background-color: BEIGE;");
+
+
     }
 
     public static void main(String[] args) {
